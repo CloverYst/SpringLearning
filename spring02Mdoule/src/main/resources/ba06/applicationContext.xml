@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <!--
+    总的文件，作用是包含其他文件，一般不声明bean
+    语法：
+         <import resource="classpath:其他文件路径" />
+    -->
+    <import resource="classpath:ba06/spring-student.xml" />
+    <import resource="classpath:ba06/spring-school.xml"/>
+</beans>

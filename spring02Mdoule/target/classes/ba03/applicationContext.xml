@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!--
+    DI:给属性赋值
+    构造注入：spring调用类中有参数的构造方法，在创建对象的同时给属性赋值
+    语法
+        <bean id="xxx" class="yyy" >
+            <constructor-arg>:表示一个构造方法的形参
+                标签属性：name 构造方法形参名  index 构造方法位置 value 简单类型形参值 ref 引用类型形参值
+        </bean>
+    -->
+
+    <bean id="myStudent" class="org.example.ba03.Student" >
+        <constructor-arg name="myname" value="clover"/>
+        <constructor-arg name="myage" value="22"/>
+        <constructor-arg name="myschool" ref="mySchool"/>
+    </bean>
+
+    <bean id="mySchool" class="org.example.ba03.School" >
+        <property name="name" value="北京大学" /> <!--setName()-->
+        <property name="address" value="北京海淀区" />  <!--setAge()-->
+    </bean>
+
+    <!--构造注入，使用index参数位置从左向右0，1，2，。。。-->
+    <bean id="myStudent2" class="org.example.ba03.Student" >
+        <constructor-arg index="0" value="clover"/>
+        <constructor-arg index="1" value="18"/>
+        <constructor-arg index="2" ref="mySchool"/>
+    </bean>
+    <!--构造注入，省略index-->
+    <bean id="myStudent3" class="org.example.ba03.Student" >
+        <constructor-arg  value="jjjjj"/>
+        <constructor-arg  value="28"/>
+        <constructor-arg  ref="mySchool"/>
+    </bean>
+
+</beans>

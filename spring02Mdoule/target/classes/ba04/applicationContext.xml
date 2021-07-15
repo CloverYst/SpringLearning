@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <!--
+    引用类型的自动注入
+        1.byName(按名称注入): java类中引用类型属性名称和spring容器中bean的id名称一样的，
+        且数据类型也是一样的，这样的bean能赋值给引用类型
+        语法规则：
+            <bean id="xxx" class="yyy" autowire="byName" >
+            </bean>
+        2.byName(按名称注入): java类中引用类型属性名称和spring容器中bean的id名称一样的，
+        且数据类型也是一样的，这样的bean能赋值给引用类型
+
+    -->
+
+    <bean id="myStudent" class="org.example.ba04.Student" autowire="byName" >
+        <property name="name" value="clover" /> <!--setName()-->
+        <property name="age" value="24" />  <!--setAge()-->
+        <!--引用类型的赋值-->
+<!--        <property name="school" ref="mySchool"/> -->
+        <!--setSchool()-->
+    </bean>
+
+    <bean id="school" class="org.example.ba04.School" >
+        <property name="name" value="AutoWire大学" /> <!--setName()-->
+        <property name="address" value="北京海淀区" />  <!--setAge()-->
+    </bean>
+
+</beans>

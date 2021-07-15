@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <!--school模块的相关类-->
+    <bean id="mySchool" class="org.example.ba06.School" >
+        <property name="name" value="AutoWireByType测试" /> <!--setName()-->
+        <property name="address" value="LosAngeles" />  <!--setAge()-->
+    </bean>
+
+
+</beans>
